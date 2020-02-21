@@ -1,0 +1,30 @@
+# for more info visit https://cto.ai/docs/ops-reference
+version: "1"
+commands:
+  - name: web_generator:1.0.61
+    public: false
+    description: op to generate popular front end applications.
+    run: node /ops/lib/index.js
+    sdk: "2"
+    remote: true
+    sourceCodeURL: ""
+    src:
+      - Dockerfile
+      - package.json
+      - .dockerignore
+      - tsconfig.json
+      - src
+    mountCwd: false
+    mountHome: true
+    bind:
+      - "/tmp:/tmp"
+    port:
+      - 3000:3000
+    help:
+      usage: "Op to generate scaffold code for popular web frameworks"
+      arguments:
+        username: "Your username"
+        email: "Your email"
+      options:
+        build: "Build flag"
+        clear: "Clears"
