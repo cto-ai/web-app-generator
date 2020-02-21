@@ -1,0 +1,91 @@
+![](https://raw.githubusercontent.com/cto-ai/aws/master/assets/banner.png)
+
+# Web App Generator 🚀
+
+This Op will scaffold the code using popular Web Application Frameworks.
+
+## Requirements
+
+To run this or any other Op, install the [Ops Platform](https://cto.ai/platform).
+
+Find information about how to run and build Ops via the [Ops Platform Documentation](https://cto.ai/docs/overview)
+
+This Op requires an access token for GitHub interactions. To create a GitHub access token:
+
+1. Create an access token with the `repo` and `admin` scopes following the [instructions here](https://help.github.com/en/articles/creating-a-personal-access-token-for-the-command-line).
+2. Copy the access token and provide it when prompted running the Op for the first time.
+
+Note:  Your remote `origin` must be set to a valid GitHub repo.
+
+## Usage
+
+To run this Op in the CLI:
+
+```bash
+  ops run web_generator
+```
+
+To run this Op in Slack:
+
+```bash
+  /ops run web_generator
+```
+
+You will be guided through selecting what framework of Web Application you want to create.
+
+After all the prompts have been completed, the Op will build and push a new application to your Github account.
+
+## Frameworks
+
+Currently, the web generator Op supports the following frameworks:
+
+- React.js
+- Gatsby
+- Next.js
+- Express.js
+
+We are working on adding support for Vue,js and Angular. If you want to a see a new framework on the list, please let us know.
+
+## Workflows
+
+This Op can be chained with other Ops to create a reusable and composable workflow.
+
+This Op uses the [sdk.setState()](https://cto.ai/docs/sdk-api/sdk#sdksetstate) functionality to persist data and allow the next Op in workflow sequence to access persisted data. This state data is only available during the duration of the workflow and is destroyed with the workflow is complete.
+
+The following keys are saved in state:
+
+- "WebGen_userFullName"
+- "WebGen_userEmail"
+- "WebGen_githubToken"
+- "WebGen_githubUserName"
+- "WebGen_repoFullName"
+- "WebGen_repoHtmlUrl"
+- "WebGen_repoGitUrl"
+- "WebGen_repoSshUrl"
+- "WebGen_repoCloneUrl"
+
+To access these keys/values (next Op in workflow) you must use [`sdk.getState()`](https://cto.ai/docs/sdk-api/sdk#sdkgetstate)
+
+## Local Development / Running from Source
+
+**1. Clone the repo:**
+
+```bash
+git clone <git url>
+```
+
+**2. Navigate into the directory and install dependencies:**
+
+```bash
+cd web_generator
+```
+
+**3. Run the Op from your current working directory with:**
+
+```bash
+ops run . --build
+```
+
+## Contributing
+
+We welcome contributions with open arms. Please open an issue or pull request if you have any feature ideas or find bugs. Thanks to all who make up our awesome community!
