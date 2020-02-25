@@ -1,6 +1,6 @@
 ![](https://raw.githubusercontent.com/cto-ai/aws/master/assets/banner.png)
 
-# Web App Generator 🚀
+# web app generator 🚀
 
 This Op will scaffold the code using popular Web Application Frameworks.
 
@@ -88,4 +88,17 @@ ops run . --build
 
 ## Contributing
 
-We welcome contributions with open arms. Please open an issue or pull request if you have any feature ideas or find bugs. Thanks to all who make up our awesome community!
+See the [contributing docs](CONTRIBUTING.md) for more information.
+
+## Contributors
+
+<table>
+  <tr>
+    <td align="center"><a href="https://github.com/jmariomejiap"><img src="https://avatars3.githubusercontent.com/u/22829270?s=400&u=8b174cca1b78aaeea49f8db44fe7050d9d7e4227&v=4" width="100px;" alt=""/><br /><sub><b>Mario Mejia</b></sub></a><br/></td>
+    <td align="center"><a href="https://github.com/CalHoll"><img src="https://avatars3.githubusercontent.com/u/21090765?s=400&v=4" width="100px;" alt=""/><br /><sub><b>Calvin Holloway</b></sub></a><br/></td>
+  </tr>
+</table>
+
+## LICENSE
+
+[MIT](LICENSE.txt)

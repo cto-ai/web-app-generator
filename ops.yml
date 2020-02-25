@@ -1,7 +1,7 @@
 # for more info visit https://cto.ai/docs/ops-reference
 version: "1"
 commands:
-  - name: web_generator:1.0.61
+  - name: web_generator:1.0.62
     public: false
     description: op to generate popular front end applications.
     run: node /ops/lib/index.js

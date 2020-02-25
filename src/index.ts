@@ -1,9 +1,9 @@
-const { Octokit } = require("@octokit/rest");
-import { ux } from "@cto.ai/sdk";
-import { track } from "./utils/tracker";
-import { saveState } from "./utils/saveState";
+const { Octokit } = require('@octokit/rest');
+import { ux } from '@cto.ai/sdk';
+import { track } from './utils/tracker';
+import { saveState } from './utils/saveState';
 
-import { getLogo } from "./constants/logo";
+import { getLogo } from './constants/logo';
 
 import {
   confirmStart,
@@ -12,7 +12,7 @@ import {
   reqProjectDescription,
   reqProjectName,
   reqProjectVisibility
-} from "./constants/prompts";
+} from './constants/prompts';
 
 import {
   connectToGithub,
@@ -23,12 +23,12 @@ import {
   linkToNewApp,
   preRequisites,
   successMessage
-} from "./constants/messages";
+} from './constants/messages';
 
-import createApplication from "./controllers";
-import { createRepository, getUserGithubInfo } from "./utils/github";
+import createApplication from './controllers';
+import { createRepository, getUserGithubInfo } from './utils/github';
 
-import { GithubTypes as G } from "./types";
+import { GithubTypes as G } from './types';
 
 export const main = async () => {
   const logo = getLogo();
@@ -36,7 +36,7 @@ export const main = async () => {
 
   // intro / description
   await track({
-    event: "Start, Op initialized"
+    event: 'Start, Op initialized'
   });
 
   await ux.print(intro);
@@ -48,22 +48,22 @@ export const main = async () => {
   const { confirm } = await ux.prompt(confirmStart);
   if (!confirm) {
     await track({
-      event: "User exit, Did not start"
+      event: 'User exit, Did not start'
     });
 
-    await ux.print("\nBye, 👋");
+    await ux.print('\nBye, 👋');
     process.exit(1);
     return;
   }
 
   await track({
-    event: "User ready to start"
+    event: 'User ready to start'
   });
 
   const { token } = await ux.prompt(getAccessToken);
-  await saveState("githubToken", token);
+  await saveState('githubToken', token);
   await track({
-    event: "User enter access token"
+    event: 'User enter access token'
   });
 
   await ux.spinner.start(connectToGithub);
@@ -77,15 +77,15 @@ export const main = async () => {
   );
 
   try {
-    await saveState("userFullName", userFullName);
-    await saveState("userEmail", userEmail);
-    await saveState("githubUserName", githubUserName);
+    await saveState('userFullName', userFullName);
+    await saveState('userEmail', userEmail);
+    await saveState('githubUserName', githubUserName);
   } catch (error) {
     ux.print(error);
   }
 
   await ux.print(gitHubConnectionOk);
-  await ux.spinner.stop("");
+  await ux.spinner.stop('');
 
   // Guide to scaffold the App.
   const { framework } = await ux.prompt(listOfFrameworks);
@@ -112,16 +112,17 @@ export const main = async () => {
   const newRepo = await createRepository(repoConfiguration);
 
   try {
-    await saveState("repoFullName", newRepo.full_name);
-    await saveState("repoHtmlUrl", newRepo.html_url);
-    await saveState("repoGitUrl", newRepo.git_url);
-    await saveState("repoSshUrl", newRepo.ssh_url);
-    await saveState("repoCloneUrl", newRepo.clone_url);
+    await saveState('repoFullName', newRepo.full_name);
+    await saveState('repoHtmlUrl', newRepo.html_url);
+    await saveState('repoGitUrl', newRepo.git_url);
+    await saveState('repoSshUrl', newRepo.ssh_url);
+    await saveState('repoCloneUrl', newRepo.clone_url);
   } catch (error) {
     ux.print(error);
   }
 
-  await ux.spinner.stop(createRepoDone(newRepo.full_name));
+  await ux.spinner.stop('');
+  ux.print(createRepoDone(newRepo.full_name));
 
   const appConfiguration = {
     projectName,
@@ -138,7 +139,7 @@ export const main = async () => {
   await ux.print(successMessage(framework));
   await ux.print(linkToNewApp(newRepo.html_url));
 
-  await ux.print("\n");
+  await ux.print('\n');
   await track({
     event: `Web App Generator Op Completed Successfully`
   });
