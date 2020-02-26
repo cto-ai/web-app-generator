@@ -1,8 +1,8 @@
-![](https://raw.githubusercontent.com/cto-ai/aws/master/assets/banner.png)
+![](https://raw.githubusercontent.com/cto-ai/web-app-generator/master/assets/banner.png)
 
-# web app generator 🚀
+# Web App Generator 🚀
 
-This Op will scaffold the code using popular Web Application Frameworks.
+This Op will scaffold code for some of the most popular Web Application Frameworks.
 
 ## Requirements
 
@@ -15,20 +15,20 @@ This Op requires an access token for GitHub interactions. To create a GitHub acc
 1. Create an access token with the `repo` and `admin` scopes following the [instructions here](https://help.github.com/en/articles/creating-a-personal-access-token-for-the-command-line).
 2. Copy the access token and provide it when prompted running the Op for the first time.
 
-Note:  Your remote `origin` must be set to a valid GitHub repo.
+Note: Your remote `origin` must be set to a valid GitHub repo.
 
 ## Usage
 
 To run this Op in the CLI:
 
 ```bash
-  ops run web_generator
+  ops run generate
 ```
 
 To run this Op in Slack:
 
 ```bash
-  /ops run web_generator
+  /ops run generate
 ```
 
 You will be guided through selecting what framework of Web Application you want to create.
@@ -88,7 +88,7 @@ ops run . --build
 
 ## Contributing
 
-See the [contributing docs](CONTRIBUTING.md) for more information.
+See the [Contributing Docs](CONTRIBUTING.md) for more information.
 
 ## Contributors
 

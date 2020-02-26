@@ -1,7 +1,7 @@
-import { ux, sdk } from '@cto.ai/sdk';
+import { ux, sdk } from "@cto.ai/sdk";
 
 const blueWelcome = `${ux.colors.bgBlueBright(
-  'Welcome to the CTO.ai web app generator'
+  "Welcome to the CTO.ai Web App Generator"
 )}`;
 
 export const intro = `
@@ -16,13 +16,13 @@ Currently, the Op supports the following frameworks:
 * Express.js`;
 
 const underlinePrerequisites = `${ux.colors.bold.underline(
-  '\nℹ️  Prerequisites:'
+  "\nℹ️  Prerequisites:"
 )}`;
 
-const boldRepo = `${ux.colors.bold.magentaBright('`repo`')}`;
-const boldAdmin = `${ux.colors.bold.magentaBright('`admin`')}`;
+const boldRepo = `${ux.colors.bold.magentaBright("`repo`")}`;
+const boldAdmin = `${ux.colors.bold.magentaBright("`admin`")}`;
 const linkGithubToken = `${ux.colors.cyanBright(
-  'https://github.com/settings/tokens/new'
+  "https://github.com/settings/tokens/new"
 )}`;
 
 export const preRequisites = `\n${underlinePrerequisites}
