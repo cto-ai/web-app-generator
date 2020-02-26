@@ -1,9 +1,9 @@
 # for more info visit https://cto.ai/docs/ops-reference
 version: "1"
 commands:
-  - name: web_generator:1.0.61
+  - name: generate:1.1.0
     public: false
-    description: op to generate popular front end applications.
+    description: Op to scaffold code for popular Web Application Frameworks.
     run: node /ops/lib/index.js
     sdk: "2"
     remote: true

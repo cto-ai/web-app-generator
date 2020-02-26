@@ -1,6 +1,7 @@
 import { ux, sdk } from '@cto.ai/sdk';
 import { insertTokenInUrl } from './../utils/insertTokenInUrl';
 import { track } from '../utils/tracker';
+import { insertBanner } from '../utils/insertBanner';
 
 import { GithubTypes as G } from '../types';
 import { UserInfo } from '../types';
@@ -87,6 +88,11 @@ export const initializeAndPushRepo = async ({
       throw error;
     }
   );
+
+  // Adjust Readme to reflect Cto.ai banner
+  await insertBanner(projectName).catch(error => {
+    throw error;
+  });
 
   // git add && commit
   await sdk
