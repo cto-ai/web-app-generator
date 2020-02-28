@@ -7,7 +7,7 @@ commands:
     run: node /ops/lib/index.js
     sdk: "2"
     remote: true
-    sourceCodeURL: ""
+    sourceCodeURL: "https://github.com/cto-ai/web-app-generator"
     src:
       - Dockerfile
       - package.json
