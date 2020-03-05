@@ -22,13 +22,13 @@ Note: Your remote `origin` must be set to a valid GitHub repo.
 To run this Op in the CLI:
 
 ```bash
-  ops run generate
+  ops run @cto.ai/generate
 ```
 
 To run this Op in Slack:
 
 ```bash
-  /ops run generate
+  /ops run @cto.ai/generate
 ```
 
 You will be guided through selecting what framework of Web Application you want to create.
